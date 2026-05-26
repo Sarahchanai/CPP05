@@ -19,16 +19,16 @@ class Bureaucrat
                 Bureaucrat (const Bureaucrat& original); //Constructeur de copie
                 Bureaucrat& operator= (const Bureaucrat& original); //Opérateur d'assignation
 
+                                    //GETTERS
+                const std::string& getName() const; //cf sujet, NB : const à la fin -> ps de modif° d'obj
+                int getGrade() const; //cf sujet 
 
                                 //NB inversement 
                 void    incrementGrade(); //cf sujet = grade 3 -> grade 2 
                 void    decrementGrade(); //cf sujet = grade 2 -> grade 3
 
-                                                    //GETTERS
-                const std::string& getName() const; //cf sujet, NB : const à la fin -> ps de modif° d'obj
-                int getGrade() const; //cf sujet 
 
-                                                //CLASSES EXCEPTIONS (imbriquées) -> éviter erreur silencieuse 
+                                    //CLASSES EXCEPTIONS (imbriquées) -> éviter erreur silencieuse 
                 class GradeTooHighException : public std::exception //pcq hérite de la classe mère : exception 
                 {
                     public:
@@ -65,5 +65,5 @@ std::ostream& operator<<(std::ostream& flux, const Bureaucrat& bureaucrat); //cf
 
 
 //throw   // "je lance une erreur"
-//try     // "j'essaie ce bloc, en sachant que ça peut foirer"
-//catch   // "si ça foire, je gère ici"
+//try     // "j'essaie ce bloc, en sachant que ça peut fail"
+//catch   // "si ça fail, je gère ici"
