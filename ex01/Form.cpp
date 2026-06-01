@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 // CONSTRUCTEUR PAR DEFAUT
 Form::Form() : _name("default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150)
@@ -90,9 +91,11 @@ const char* Form::GradeTooLowException::what() const throw()
     return ("Form : grade too low!");
 }
 
+
+
 std::ostream& operator<<(std::ostream& flux, const Form& form)
 {
-    flux << "Form : " << form.getName();
+    flux << "Form's name : " << form.getName();
     
     if (form.getIsSigned() == true)
         flux << " | signed : yes";

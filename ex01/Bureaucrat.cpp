@@ -100,15 +100,20 @@ std::ostream& operator<<(std::ostream& flux, const Bureaucrat& bureaucrat)
     return (flux);
 }
 
+
+
+
+                        //CF SUJET EX01!!!!!!!!
 void Bureaucrat::signForm(Form& form)
 {
     try
     {
         form.beSigned(*this);
-        // *this = le bureaucrat lui-même (moi)
+        //*this = le bureaucrat lui-même (moi)
         // on demande au formulaire "peux-tu être signé par moi ?"
         // si beSigned throw -> on saute au catch
         // si beSigned ne throw ps -> le formulaire est signé, on continue
+        
         std::cout << getName() << " signed " << form.getName() << std::endl;
     }
     catch (std::exception& exceptioncaught)
