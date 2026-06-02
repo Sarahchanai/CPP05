@@ -27,6 +27,7 @@ class	Form
     			int                 getGradeToExecute() const;
 
 
+						//FONC.
 				void beSigned(const Bureaucrat& bureaucrat); // cf sujet, le bureaucrat a t-il le grade suffisant pr sign
 				
 						//EXCEPT°, cf sujet
