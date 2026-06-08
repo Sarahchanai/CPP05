@@ -30,7 +30,7 @@ class AForm // classe mere polymorphique
 				void beSigned(const Bureaucrat& bureaucrat); // cf sujet, le bureaucrat a t-il le grade suffisant pr sign
 				
 
-						//EXCEPT°, cf sujet
+								//EXCEPT°, cf sujet
 				class	GradeTooHighException : public std::exception
     			{
     				public:
@@ -42,7 +42,8 @@ class AForm // classe mere polymorphique
     				public:
         				const char* what() const throw();
                 };
-
+				
+				// NEW ONE -> HELPER -> CheckRequirements
 				class	FormNotSignedException : public std::exception
 				{
 					public :
@@ -50,13 +51,13 @@ class AForm // classe mere polymorphique
 				};
 
 
-                //HELPER
+                				//HELPER
                 void	checkRequirements(const Bureaucrat& executor) const;
 				// form signe ? le bureaucrat possede le grade requis ?
 //AForm vérifie les règles communes, puis délègue l'action spécifique aux classes filles
 
 
-                //FONC. VIRTUELLE, cf sujet 
+                			//FONC. VIRTUELLE, cf sujet 
                 virtual void execute (Bureaucrat const & executor) const = 0;
 // NB : virtual = 7 fonc. doit etre redef ds les classes filles, chacune l'implemente a sa facon 
 

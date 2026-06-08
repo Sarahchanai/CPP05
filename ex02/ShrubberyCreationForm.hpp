@@ -18,7 +18,7 @@ class ShrubberyCreationForm : public AForm
 				ShrubberyCreationForm (const ShrubberyCreationForm& original);
 				ShrubberyCreationForm& operator= (const ShrubberyCreationForm& original);
 
-				void execute (Bureaucrat const & executor) const; // redef fonction virtuelle
+				void execute (Bureaucrat const & executor) const; // redef fonction virtuelle, cf sujet (syntaxe)
 
 	private :
 
