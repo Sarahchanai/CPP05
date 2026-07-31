@@ -38,17 +38,35 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& origin
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& original)
 {
     if (this != &original)
-        _target = original._target;
+        _target = original._target;//impossible pcq const
+        // AForm::operator=(original); // a revoir 
 
     return *this;
 }
 
 //cf sujet
 // verif que le form est sign + grade suffisant
-// creer le file _target + "_shrubbery" (syntaxe cf sujet : Creates a file <target>_shrubbery)
+// creer le newfile _target + "_shrubbery" (syntaxe cf sujet : Creates a newfile <target>_shrubbery)
 // y ecrire des arbres ascii
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+    checkRequirements(executor);
 
+    std::ofstream newfile ( (_target + "_shrubbery") .c_str() );
+
+    if (!newfile.is_open())
+        throw std::runtime_error("ShrubberyCreationForm : could not create newfile");
+
+	newfile << " __" << std::endl;
+	newfile << " .' `." << std::endl;
+	newfile << " / \\" << std::endl;
+	newfile << " | LEMON |" << std::endl;
+	newfile << " | |" << std::endl;
+	newfile << " \\ /" << std::endl;
+	newfile << " `.__.'" << std::endl;
+
+    newfile.close();
+	if (newfile.fail())
+		throw std::runtime_error("ShrubberyCreationForm : failed 2 close newfile");
 
 }    

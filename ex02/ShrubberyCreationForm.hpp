@@ -4,6 +4,7 @@
 #include "AForm.hpp"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 
 
@@ -22,7 +23,7 @@ class ShrubberyCreationForm : public AForm
 
 	private :
 
-				std::string _target; //cf sujet
+				const std::string _target; //cf sujet
 
 
 };

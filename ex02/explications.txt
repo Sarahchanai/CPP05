@@ -1,0 +1,53 @@
+/*dans cet exo on doit pouvoir executer plusieurs formulaires differents
+sans ecrire un programme different pour chaque formulaire.
+
+les 3 differents formulaires sont:
+RobotomyRequestForm / ShrubberyCreationForm / PresidentialPardonForm
+
+chacun d'entre eux ont une utilite differente et ont des conditions d'execution 
+differente. le but est de pouvoir les executer sans avoir a ecrire un code distinct
+pour chacun.
+
+On va donc passer par la fonction Aform() et y mettre les conditions d'execution.
+
+ShrubberyCreationForm-> grades requis signature 145 et execution 137 et son target
+RobotomyRequestForm-> grades requis signature 72 et execution 45 et son target
+PresidentialPardonForm-> grades requis signature 25 et execution 45 et son target
+
+chacun des formulaires a des conditions differentes et faut pouvoir les executer sans ecrire un code pour chacun
+
+pour se faire, on va utiliser Aform : AForm::AForm() : _name("default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150).
+
+pour chaque formulaire on va lui donner ses conditions respectifs
+
+donc exemple le formulaire
+
+ShrubberyCreationForm::ShrubberyCreationForm() : 
+
+je vais appeler Aform() et lui donner les conditions necessaires pour l'executer,
+ca va donner :
+
+ShrubberyCreationForm::ShrubberyCreationForm() : Aform("[le nom en question]", [grade signature], [grade exec]);
+
+et ca sera la meme chose pour chaque fonction cannonique MAIS la chose qui changera sera la fonction execute() 
+respective a chaque formulaire car cest elle qui differencie chaque formulaire.
+
+genre la fonction execute() que tu as deja fais dans ShrubberyCreationForm.cpp le but de ce formulaire est (cest inutile oui je sais)
+mais l'utilite est d'afficher ton image, dans le fichier que tu vas creer apres lexecution, cette image en particulier que tu as choisi:
+
+newfile << " __" << std::endl;
+	newfile << " .' `." << std::endl;
+	newfile << " / \\" << std::endl;
+	newfile << " | LEMON |" << std::endl;
+	newfile << " | |" << std::endl;
+	newfile << " \\ /" << std::endl;
+	newfile << " `.__.'" << std::endl;
+
+pour RobotomyRequestForm -> Si les conditions passent : (oui aussi inutile) affiche des bruits de perceuse, puis tire 
+au sort 50/50 et affiche soit "robotomisé avec succès", soit "échec" aleatoirement.
+
+il faut faire une fonction execute propre a ce formulaire pour faire ce qui est demande
+
+
+et enfin pour PresidentialPardonForm -> Si les conditions passent affiche simplement un message fixe : "[personnage] a été pardonné par Zaphod Beeblebrox."
+*/

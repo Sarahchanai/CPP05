@@ -110,3 +110,19 @@ std::ostream& operator<<(std::ostream& flux, const AForm& AForm)
     
     return (flux);
 }
+
+// fonct commune a tt les filles donc -> aForm
+void	AForm::checkRequirements (const Bureaucrat& executor) const
+{
+	if (_isSigned == false)
+	{
+		throw FormNotSignedException();
+	}
+
+	if (executor.getGrade() > _gradeToExecute)
+	{
+		throw GradeTooLowException();
+	}
+	
+}
+
