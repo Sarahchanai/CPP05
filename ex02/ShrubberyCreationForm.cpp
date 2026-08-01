@@ -38,13 +38,16 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& origin
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& original)
 {
     if (this != &original)
-        _target = original._target;//impossible pcq const
-        // AForm::operator=(original); // a revoir 
+        // _target = original._target;//impossible pcq const
+        AForm::operator=(original);
 
     return *this;
 }
 
 //cf sujet
+// ShrubberyCreationForm: Required grades: sign 145, exec 137
+// Creates a file <target>_shrubbery in the working directory and writes ASCII trees
+// inside it.
 // verif que le form est sign + grade suffisant
 // creer le newfile _target + "_shrubbery" (syntaxe cf sujet : Creates a newfile <target>_shrubbery)
 // y ecrire des arbres ascii

@@ -3,9 +3,12 @@
 
 #include "AForm.hpp"
 #include <string>
-#include <fstream> //librairie gest. de file
+#include <cstdlib> //pr rand
 
-
+// parodie bureaucratique -> but pedagogique
+// -> faire pratiquer -> 1 classe concrete qui herite dAForm
+// -> action a simuler (std::cout)
+// 2e classe fille en re usnt le m^ squelette que la 1ere
 
 class RobotomyRequestForm : public AForm
 {

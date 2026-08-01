@@ -57,7 +57,7 @@ class AForm // classe mere polymorphique
 //AForm vérifie les règles communes, puis délègue l'action spécifique aux classes filles
 
 
-                			//FONC. VIRTUELLE, cf sujet 
+                			//FONC. VIRTUELLE, cf sujet -> abstraite
                 virtual void execute (Bureaucrat const & executor) const = 0;
 // NB : virtual = 7 fonc. doit etre redef ds les classes filles, chacune l'implemente a sa facon 
 

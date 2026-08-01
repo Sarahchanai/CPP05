@@ -1,16 +1,44 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm(/*fais la meme chose que dans ShrubberyCreationForm.cpp*/){}
+//formulaire concret qui herite de AForm 
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm(/*fais la meme chose que dans ShrubberyCreationForm.cpp*/) {}
+// C par defaut -> si ds main : PresidentialPardonForm optimus;
+PresidentialPardonForm::PresidentialPardonForm() : 
+	AForm("PresidentialPardonForm", 72, 45),
+	_target("default")
+{
+	std::cout << "Default PresidentialPardonForm Constructor called" << std::endl;
+}
+					//D
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+	std::cout << "PresidentialPardonForm's Destructor called" << std::endl;
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& original) : AForm(/*fais la meme chose que dans ShrubberyCreationForm.cpp*/) {}
-
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& original){
-/*fais la meme chose que dans ShrubberyCreationForm.cpp*/
+}
+						//C w/ valeurs -> si ds main : PresidentialPardonForm optimus ("megatron");
+						// NB : target recoit "megatron" -> _target = megatron
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target) :
+	AForm("PresidentialPardonForm", 72, 45),
+	_target(target)
+{
+	std::cout << "Values PresidentialPardonForm Constructor called" << std::endl;
 }
 
-void execute (PresidentialPardonForm const & executor) const
+
+					//C de copie
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& original)
+	: AForm(original),
+	_target(original._target)
 {
-    /*cest la que ca va changer et faudra faire la fonction en particulier d'execution pour ce formulaire*/
+	std::cout << "Copy PresidentialPardonForm constructor called" << std::endl;
+}
+
+				//OPe d'assignat.
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& original)
+{
+	if (this != &original)
+		// _target = original._target;//impossible pcq const
+		AForm::operator=(original); 
+
+	return *this;
 }
