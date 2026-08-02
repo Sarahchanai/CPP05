@@ -5,6 +5,7 @@
 #include <string>
 #include <stdexcept> //librairie classe exception 
 
+class Aform;
 
 class Bureaucrat
 {
@@ -45,6 +46,9 @@ class Bureaucrat
                     public:
                         const char* what() const throw();
                 };
+
+                void	signForm(AForm &form) ;
+				void	executeForm(AForm const &form) const;
 
 
 

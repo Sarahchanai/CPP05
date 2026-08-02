@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 
+
                 // CONSTRUCTEUR PAR DEFAUT
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 {
@@ -98,5 +99,26 @@ std::ostream& operator<<(std::ostream& flux, const Bureaucrat& bureaucrat)
 {
     flux << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade(); //syntaxe cf sujet
     return (flux);
+}
+
+
+void Bureaucrat::signForm(AForm& form)
+{
+    try
+    {
+        form.beSigned(*this);
+        //*this = le bureaucrat lui-même (moi)
+        // on demande au formulaire "peux-tu être signé par moi ?"
+        // si beSigned throw -> on saute au catch
+        // si beSigned ne throw ps -> le formulaire est signé, on continue
+        
+        std::cout << getName() << " signed " << form.getName() << std::endl;
+    }
+    catch (std::exception& exceptioncaught)
+    {
+        // beSigned a throwé -> le grade était insuffisant
+        std::cout << getName() << " couldn't sign " << form.getName()
+                  << " because " << exceptioncaught.what() << std::endl;
+    }
 }
 

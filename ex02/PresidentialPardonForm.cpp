@@ -2,9 +2,9 @@
 
 //formulaire concret qui herite de AForm 
 
-// C par defaut -> si ds main : PresidentialPardonForm optimus;
+// C par defaut -> si ds main : PresidentialPardonForm sarah;
 PresidentialPardonForm::PresidentialPardonForm() : 
-	AForm("PresidentialPardonForm", 72, 45),
+	AForm("PresidentialPardonForm", 25, 5),
 	_target("default")
 {
 	std::cout << "Default PresidentialPardonForm Constructor called" << std::endl;
@@ -15,10 +15,10 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "PresidentialPardonForm's Destructor called" << std::endl;
 
 }
-						//C w/ valeurs -> si ds main : PresidentialPardonForm optimus ("megatron");
+						//C w/ valeurs -> si ds main : PresidentialPardonForm sarah ("mb");
 						// NB : target recoit "megatron" -> _target = megatron
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) :
-	AForm("PresidentialPardonForm", 72, 45),
+	AForm("PresidentialPardonForm", 25, 5),
 	_target(target)
 {
 	std::cout << "Values PresidentialPardonForm Constructor called" << std::endl;
@@ -41,4 +41,14 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 		AForm::operator=(original); 
 
 	return *this;
+}
+
+
+
+//cf sujet
+// PresidentialPardonForm: Required grades: sign 25, exec 5 Informs that <target> has been pardoned by Zaphod Beeblebrox.
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+{
+	checkRequirements(executor);
+	std::cout << _target << " has been pardoned by Zaphod Beeblerox" << std::endl;
 }
