@@ -5,7 +5,7 @@
 #include <string>
 #include <stdexcept> //librairie classe exception 
 
-class Aform;
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -47,8 +47,11 @@ class Bureaucrat
                         const char* what() const throw();
                 };
 
-                void	signForm(AForm &form) ;
-				void	executeForm(AForm const &form) const;
+
+				void	executeForm(AForm const &form) const; //cf imposé par le sujet
+//  Lastly, add the executeForm(AForm const & form) const member function to the Bureaucrat class. It must attempt to execute the form. If successful, print something like:
+//    <bureaucrat> executed <form>
+// If not, print an explicit error message.
 
 
 

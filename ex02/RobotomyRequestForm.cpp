@@ -1,40 +1,40 @@
-#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 //formulaire concret qui herite de AForm 
 
-// C par defaut -> si ds main : PresidentialPardonForm optimus;
-PresidentialPardonForm::PresidentialPardonForm() : 
-	AForm("PresidentialPardonForm", 72, 45),
+// C par defaut -> si ds main : RobotomyRequestForm optimus;
+RobotomyRequestForm::RobotomyRequestForm() : 
+	AForm("RobotomyRequestForm", 72, 45),
 	_target("default")
 {
-	std::cout << "Default PresidentialPardonForm Constructor called" << std::endl;
+	std::cout << "Default RobotomyRequestForm Constructor called" << std::endl;
 }
 					//D
-PresidentialPardonForm::~PresidentialPardonForm()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "PresidentialPardonForm's Destructor called" << std::endl;
+	std::cout << "RobotomyRequestForm's Destructor called" << std::endl;
 
 }
-						//C w/ valeurs -> si ds main : PresidentialPardonForm optimus ("megatron");
+						//C w/ valeurs -> si ds main : RobotomyRequestForm optimus ("megatron");
 						// NB : target recoit "megatron" -> _target = megatron
-PresidentialPardonForm::PresidentialPardonForm(const std::string& target) :
-	AForm("PresidentialPardonForm", 72, 45),
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) :
+	AForm("RobotomyRequestForm", 72, 45),
 	_target(target)
 {
-	std::cout << "Values PresidentialPardonForm Constructor called" << std::endl;
+	std::cout << "Values RobotomyRequestForm Constructor called" << std::endl;
 }
 
 
 					//C de copie
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& original)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& original)
 	: AForm(original),
 	_target(original._target)
 {
-	std::cout << "Copy PresidentialPardonForm constructor called" << std::endl;
+	std::cout << "Copy RobotomyRequestForm constructor called" << std::endl;
 }
 
 				//OPe d'assignat.
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& original)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& original)
 {
 	if (this != &original)
 		// _target = original._target;//impossible pcq const
@@ -46,10 +46,10 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 
 //cf sujet :
-// PresidentialPardonForm: Required grades: sign 72, exec 45
+// RobotomyRequestForm: Required grades: sign 72, exec 45
 // Makes some drilling noises, then informs that <target> has been robotomized
 // successfully 50% of the time. Otherwise, it informs that the robotomy failed.
-void PresidentialPardonForm::execute (Bureaucrat const &executor) const
+void RobotomyRequestForm::execute (Bureaucrat const &executor) const
 {
 	checkRequirements(executor);
 

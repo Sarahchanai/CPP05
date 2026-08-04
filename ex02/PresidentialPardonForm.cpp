@@ -50,5 +50,5 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	checkRequirements(executor);
-	std::cout << _target << " has been pardoned by Zaphod Beeblerox" << std::endl;
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

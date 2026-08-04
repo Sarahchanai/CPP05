@@ -102,23 +102,20 @@ std::ostream& operator<<(std::ostream& flux, const Bureaucrat& bureaucrat)
 }
 
 
-void Bureaucrat::signForm(AForm& form)
+
+
+
+void    Bureaucrat::executeForm(AForm const & form) const
 {
     try
     {
-        form.beSigned(*this);
-        //*this = le bureaucrat lui-même (moi)
-        // on demande au formulaire "peux-tu être signé par moi ?"
-        // si beSigned throw -> on saute au catch
-        // si beSigned ne throw ps -> le formulaire est signé, on continue
+        form.execute(*this);
+        std::cout << _name << " executed" << form.getName() << std::endl;
         
-        std::cout << getName() << " signed " << form.getName() << std::endl;
     }
-    catch (std::exception& exceptioncaught)
+    catch(const std::exception& e)
     {
-        // beSigned a throwé -> le grade était insuffisant
-        std::cout << getName() << " couldn't sign " << form.getName()
-                  << " because " << exceptioncaught.what() << std::endl;
+        std::cout << _name << " could not execute " << form.getName() << " because" << e.what() << std::endl;
     }
+    
 }
-

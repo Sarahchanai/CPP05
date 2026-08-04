@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-class Bureaucrat;
+class Bureaucrat; // = forward décla au lieu d'1 include
 
 
 class AForm // classe mere polymorphique 
