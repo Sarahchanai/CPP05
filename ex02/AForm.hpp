@@ -59,7 +59,8 @@ class AForm // classe mere polymorphique
 
                 			//FONC. VIRTUELLE, cf sujet -> abstraite
                 virtual void execute (Bureaucrat const & executor) const = 0;
-// NB : virtual = 7 fonc. doit etre redef ds les classes filles, chacune l'implemente a sa facon 
+// NB : virtual = 7 fonc. doit etre redef ds les classes filles, chacune l'implemente a sa facon
+// abstraite pcq ps de formulR générique 
 
 
     private :

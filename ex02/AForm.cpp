@@ -92,7 +92,7 @@ const char* AForm::GradeTooLowException::what() const throw()
 }
 const char* AForm::FormNotSignedException::what() const throw()
 {
-    return ("AForm : form can not be signed !");
+    return ("AForm : form has not been signed !");
 }
 
 //cf suje redef operateur

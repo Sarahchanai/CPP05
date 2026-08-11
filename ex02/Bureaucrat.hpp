@@ -47,7 +47,7 @@ class Bureaucrat
                         const char* what() const throw();
                 };
 
-
+                void signForm(AForm& form) const; // cf sujet ex01
 				void	executeForm(AForm const &form) const; //cf imposé par le sujet
 //  Lastly, add the executeForm(AForm const & form) const member function to the Bureaucrat class. It must attempt to execute the form. If successful, print something like:
 //    <bureaucrat> executed <form>
