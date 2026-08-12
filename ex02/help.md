@@ -63,6 +63,13 @@ avce if -> bes1 de vérif partout et tt le temps -> si oublie : erreur passe sil
 
 NB : un constructeur n'a aucune valeur de retour
 
+- throw -> j'ai détécté un problème
+- try -> execute le code normlt ms ready à récup une exception qui pourrait en sortir
+- catch -> si exception arrivee 
+
+
+NB : on ne met ps try pcq on sait qu'il va y avoir une erreur ! on le met pcq on appelle une opé qui peut soit reussir soit lancer une exception
+
 
 
 

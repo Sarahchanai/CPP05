@@ -14,7 +14,7 @@ int	main()
 	Bureaucrat manager ("Manager", 40);
 	Bureaucrat employee ("Employee", 140);
 	Bureaucrat intern ("Intern", 150);
-
+// classe mere bf4 classe fille
 	ShrubberyCreationForm shrub("garden");
 	RobotomyRequestForm robot("Bender");
 	PresidentialPardonForm pardon("Arthur Dent");
@@ -30,10 +30,9 @@ int	main()
 	std::cout << robot << std::endl;
 	std::cout << pardon << std::endl;
 
-	std::cout << "TEST 3 : EXEC. FORM NN SIGNE \n" << std::endl;
+	std::cout << "TEST 3 : TRY 2 EXECUTE WITHOUT SIGNATURE \n" << std::endl;
 
-	std::cout << "\n EXECUTE WITHOUT SIGNATURE : \n" << std::endl;
-	boss.executeForm(shrub);
+	boss.executeForm(shrub); // grade suffisant pour executer mais echec pcq absence de signature
 
 	std::cout << "TEST 4 : SIGN W/ LOW GRADE \n" << std::endl;
 
@@ -71,15 +70,16 @@ int	main()
 
 	std::cout << "TEST 9 : EXECUTION GRADE \n" << std::endl;
 	Bureaucrat lowGrade("LowGrade", 140);
-	PresidentialPardonForm anotherPardon("Marvin");
+	PresidentialPardonForm anotherPardon("Sarah");
 	boss.signForm(anotherPardon); // NB : le form demande le grade 5 pour etre execute -> LowGrade = 140
-	lowGrade.executeForm(anotherPardon);
+	lowGrade.executeForm(anotherPardon); // signé mais grade insuffisant
 
 	std::cout << "TEST 10 : POLYMORPHISME \n" << std::endl;
 
 	AForm* form;
 	form = new ShrubberyCreationForm("polymorphism");
-	boss.signForm(*form); boss.executeForm(*form);
+	boss.signForm(*form);
+	boss.executeForm(*form);
 	delete form;
 
 	form = new RobotomyRequestForm("Robot");
@@ -106,25 +106,9 @@ int	main()
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "TEST 12 : INCREMENT/DECREMENT \n" << std::endl;
-
-	Bureaucrat testGrade("TestGrade", 2);
-	std::cout << testGrade << std::endl;
-	testGrade.incrementGrade();
-	std::cout << testGrade << std::endl;
-	try
-	{
-		testGrade.incrementGrade();
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
-	}
-	testGrade.decrementGrade();
-	std::cout << testGrade << std::endl;
 
 
-	std::cout << "TEST 14 : ABSTRACT CLASS \n" << std::endl;
+	std::cout << "TEST 12 : ABSTRACT CLASS \n" << std::endl;
 	// AForm form; -> AForm abstraite pcq execute() = fonct. virtuelle pure.
 
 	return (0);
