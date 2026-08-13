@@ -34,6 +34,7 @@ Bureaucrat::Bureaucrat (const Bureaucrat& original) : _name(original._name), _gr
 
                         //OPE ASSIGNA°
 //NB : _name -> const std::string _name -> impossible _name = original._name
+// donc copie que de _grade et non _name
 Bureaucrat& Bureaucrat::operator= (const Bureaucrat& original)
 {
     std::cout << "Copy assignment operator called" << std::endl;
