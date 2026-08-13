@@ -18,10 +18,16 @@ Form::Form(const std::string& name, int gradeToSign, int gradeToExecute)
     : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
     // NB : _isSigned = false obligatoirt à la construct°, cf sujet
 {
-    if (gradeToSign < 1 || gradeToExecute < 1)
+    if (gradeToSign < 1)
         throw GradeTooHighException();
 
-    if (gradeToSign > 150 || gradeToExecute > 150)
+    if (gradeToExecute < 1)
+        throw GradeTooHighException();
+
+    if (gradeToSign > 150)
+        throw GradeTooLowException();
+    
+    if (gradeToExecute > 150)
         throw GradeTooLowException();
 
     std::cout << "Form (value's) constructor called" << std::endl;
