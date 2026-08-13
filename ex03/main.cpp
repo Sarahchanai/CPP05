@@ -3,11 +3,11 @@
 
 int main()
 {
-	std::cout << "Intern creation\n" << std::endl;
+	std::cout << "Intern creation : \n" << std::endl;
     Intern stagiaire;
 
     
-	std::cout << "\nForms creation\n" << std::endl;
+	std::cout << "\nForms creation : \n" << std::endl;
 	AForm* shrubbery;
 	AForm* robotomy;
 	AForm* presidential;
@@ -16,7 +16,7 @@ int main()
 	robotomy = stagiaire.makeForm("robotomy request", "Bender");
 	presidential = stagiaire.makeForm("presidential pardon", "Arthur Dent");
 
-	std::cout << "\n Sign & execution of forms\n" << std::endl;
+	std::cout << "\n Sign & execution of forms : \n" << std::endl;
 
 	Bureaucrat boss("Boss", 1);
 	std::cout << boss << std::endl;
@@ -27,12 +27,12 @@ int main()
 	boss.executeForm(*robotomy);
 	boss.executeForm(*presidential);
 
-	std::cout << "\n Unknown form\n" << std::endl;
+	std::cout << "\n UNKNOWN FORM :\n" << std::endl;
 	AForm* invalidname;
 	invalidname = stagiaire.makeForm("citron", "desert");
 	std::cout << invalidname << std::endl;
 
-	std::cout << "\n clean\n" << std::endl;
+	std::cout << "\n CLEAN : \n" << std::endl;
 	delete shrubbery;
 	delete robotomy;
 	delete presidential;

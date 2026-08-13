@@ -60,16 +60,16 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     if (!newfile.is_open())
         throw std::runtime_error("ShrubberyCreationForm : could not open newfile");
 
-	newfile << " __" << std::endl;
-	newfile << " .' `." << std::endl;
-	newfile << " / \\" << std::endl;
-	newfile << " | LEMON |" << std::endl;
-	newfile << " | |" << std::endl;
-	newfile << " \\ /" << std::endl;
-	newfile << " `.__.'" << std::endl;
+		newfile << " __" << std::endl;
+		newfile << " .' `." << std::endl;
+		newfile << " / \\" << std::endl;
+		newfile << " | LEMON |" << std::endl;
+		newfile << " | |" << std::endl;
+		newfile << " \\ /" << std::endl;
+		newfile << " `.__.'" << std::endl;
 
 	if (newfile.fail())
 		throw std::runtime_error("ShrubberyCreationForm : an error occured while writing file");
 
-    newfile.close();
+	newfile.close();
 }    

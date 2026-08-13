@@ -1,4 +1,4 @@
-NAME = EX02
+NAME = AForm
 
 CXX = c++
 

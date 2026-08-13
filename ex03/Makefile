@@ -1,4 +1,4 @@
-NAME = ex03
+NAME = intern
 
 CXX = c++
 
